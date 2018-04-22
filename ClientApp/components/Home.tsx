@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as GreetingStore from '../store/Greeting';
 import ToggledGreeter from '../containers/ToggledGreeter';
+import ModalLauncher from './modal/ModalLauncher';
 
 // type Props =
 //     { greeter: GreetingStore.IGreetingState }
@@ -12,11 +13,21 @@ import ToggledGreeter from '../containers/ToggledGreeter';
 
 // class Home extends React.Component<Props, {}> {
 const Home: React.SFC<{}> = () => {
+    const handleSubmit = () => {
+        console.log("Clicked")
+    }
+
     // const { greeter, greetingActions } = this.props;
     return <div>
         <h1>Hello!</h1>
+        <ModalLauncher buttonLabel="Open modal">
+            <h4>Some header</h4>
+            <p>Some text in the Modal..</p>
+            {/* <button type="button" className="btn btn-primary" onClick={handleSubmit}>Child reporting!</button> */}
+        </ModalLauncher>
+
         {/* <FlatGreeter /> */}
-        <ToggledGreeter />
+        {/* <ToggledGreeter /> */}
 
         {/* <p>{greeter.greeting}</p>
             <button onClick={() => greetingActions.toggleGreeting()}>Toggle</button> */}

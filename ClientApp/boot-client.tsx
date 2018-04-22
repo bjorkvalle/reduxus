@@ -1,5 +1,6 @@
 import './css/site.css';
 import 'bootstrap';
+import './css/modal.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
@@ -7,7 +8,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 import configureStore from './configureStore';
-import { ApplicationState }  from './store';
+import { ApplicationState } from './store';
 import * as RoutesModule from './routes';
 let routes = RoutesModule.routes;
 
@@ -24,8 +25,8 @@ function renderApp() {
     // and injects the app into a DOM element.
     ReactDOM.render(
         <AppContainer>
-            <Provider store={ store }>
-                <ConnectedRouter history={ history } children={ routes } />
+            <Provider store={store}>
+                <ConnectedRouter history={history} children={routes} />
             </Provider>
         </AppContainer>,
         document.getElementById('react-app')
